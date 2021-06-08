@@ -3,6 +3,7 @@
   padding: 0;
   border: 0;
   line-height: 2;
+  box-sizing: border-box;
   /* font-size: 100%; */
   /* vertical-align: baseline; */
 }
@@ -29,4 +30,19 @@
   min-width: 60px;
   min-height: 60px;
   border-radius: 3px;
+}
+
+/* LISTA DE CORES */
+
+#color1 {
+  background-color: black;
+}
+#color2 {
+  background-color: red;
+}
+#color3 {
+  background-color: green;
+}
+#color4 {
+  background-color: yellow;
 }
