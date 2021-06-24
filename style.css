@@ -7,20 +7,32 @@
   /* font-size: 100%; */
   /* vertical-align: baseline; */
 }
-
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(images/PixelBackgrounds2.png);
+  background-size: cover;
+}
 .title {
   padding: 10px 0;
   text-align: center;
-  font-family: VT323-Regular, monospace;
+  font-family: 'Press Start 2P', cursive;
   font-size: 55px;
 }
 
-.navContainer {
+.navColorsContainer {
   width: 350px;
   height: 80px;
   display: flex;
   align-items: center;
-  margin: auto;
   padding-bottom: 3px;
   justify-content: space-between;
 }
@@ -45,4 +57,30 @@
 }
 #color4 {
   background-color: yellow;
+}
+
+.buttonsMenuContainer {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  background: brown;
+}
+
+/* Pixel Board */
+
+.pixelBoard {
+  width: 100%;
+  height: 75%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px white;
+  background-color: rgba(18, 38, 32, 0.5);
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
 }
