@@ -8,7 +8,8 @@ const requisito1 = () => {
 }
 
 const requisito2 = () => {
-    const cores = ["black", "red", "green", "blue"];
+    let rgbAleatorio = () => `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
+    const cores = ["black", rgbAleatorio(), rgbAleatorio(), rgbAleatorio()];
     const divCores = document.createElement("div");
     const ul = document.createElement("ul");
     ul.setAttribute("id", "color-palette");
@@ -42,7 +43,7 @@ const requisito4 = (number) => {
     const ulPixels = document.createElement("ul");
     document.body.appendChild(ulPixels);
     ulPixels.setAttribute("id", "pixel-board");
-    for (let index = 0; index < 5; index++) {
+    for (let index = 0; index < number; index++) {
 
         const divPixels = document.createElement("div");
         divPixels.style.display = "flex"
@@ -87,9 +88,12 @@ const requisito9 = () => {
     const ulPixel = document.querySelector("#pixel-board");
     const pixels = document.querySelectorAll(".pixel");
     const eraseButton = document.createElement("button");
+    const divButtons = document.createElement("div");
+    divButtons.setAttribute("id", "div-buttons");
     eraseButton.innerHTML = "Limpar";
     eraseButton.setAttribute("id", "clear-board");
-    document.body.insertBefore(eraseButton, ulPixel);
+    divButtons.appendChild(eraseButton);
+    document.body.insertBefore(divButtons, ulPixel);
     eraseButton.addEventListener("click", () => {
         for (const pixel of pixels) {
             pixel.style.backgroundColor = "white"
@@ -98,8 +102,29 @@ const requisito9 = () => {
 }
 
 
-
-
+const requisito10 = () => {
+    const divButtons = document.querySelector("#div-buttons");
+    const input = document.createElement('input');
+    input.setAttribute('type', 'number');
+    input.setAttribute('id', 'board-size');
+    input.setAttribute('min', '1'); 
+    const botaoAumentar = document.createElement('button');
+    botaoAumentar.setAttribute('id', 'generate-board');
+    botaoAumentar.innerHTML = "VQV"; 
+    divButtons.appendChild(input);
+    divButtons.appendChild(botaoAumentar);
+    
+    botaoAumentar.addEventListener('click', () => {
+        if (input.value === '') {
+            return alert('Board inválido!');
+        } if (input.value < 5) { input.value = 5; }
+         if (input.value > 50) { input.value = 50; } 
+        const ulPixel = document.querySelector('#pixel-board');
+        ulPixel.remove(); 
+        requisito4(input.value);
+        requisito8();
+    })
+}
 
 
 
@@ -111,6 +136,7 @@ window.onload = () => {
     requisito7();
     requisito8();
     requisito9();
+    requisito10();
 }
 
 
