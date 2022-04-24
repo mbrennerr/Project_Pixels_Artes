@@ -10,10 +10,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(images/PixelBackgrounds2.png);
+  background-image: url(Assets/PixelBackgrounds2.png);
   background-size: cover;
   /* animation: animateImage 20s ease 0s infinite alternate forwards;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;  */
 }
 
 .pixel {
