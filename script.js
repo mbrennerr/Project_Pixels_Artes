@@ -105,6 +105,7 @@ const requisito10 = () => {
   divButtons.appendChild(input);
   divButtons.appendChild(botaoAumentar);
 
+  /* Botão Pra aumentar o tmanaho do Board */
   botaoAumentar.addEventListener('click', () => {
     if (input.value === '') {
       return alert('Board inválido!');
@@ -120,7 +121,7 @@ const requisito10 = () => {
 window.onload = () => {
   requisito1();
   requisito2();
-  requisito4(5);
+  requisito4(10);
   requisito7();
   requisito8();
   requisito9();
